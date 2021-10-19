@@ -24,3 +24,12 @@ jobs:
           config: >- # more at semgrep.dev/explore
             p/security-audit
             p/secrets
+            
+rules:
+  - id: syntax-error
+    languages:
+      - python
+    message: There is an error in the code!
+    pattern: print(...
+    severity: ERROR
+
