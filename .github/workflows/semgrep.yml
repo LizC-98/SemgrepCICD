@@ -17,6 +17,8 @@ rules:
     message: There is an error in the code!
     pattern: print(...
     severity: ERROR
+    
+    
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
