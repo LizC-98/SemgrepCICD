@@ -10,6 +10,13 @@ on: push
   #   branches: ["master", "main"]
 
 jobs:
+rules:
+  - id: syntax-error
+    languages:
+      - python
+    message: There is an error in the code!
+    pattern: print(...
+    severity: ERROR
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
@@ -25,11 +32,5 @@ jobs:
             p/security-audit
             p/secrets
             
-rules:
-  - id: syntax-error
-    languages:
-      - python
-    message: There is an error in the code!
-    pattern: print(...
-    severity: ERROR
+
 
