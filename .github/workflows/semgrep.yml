@@ -10,14 +10,6 @@ on: push
   #   branches: ["master", "main"]
 
 jobs:
-rules:
-  - id: syntax-error
-    languages:
-      - python
-    message: There is an error in the code!
-    pattern: print(...
-    severity: ERROR
-    
     
   semgrep:
     name: Scan
@@ -29,6 +21,15 @@ rules:
       - uses: actions/checkout@v2
 
       - uses: returntocorp/semgrep-action@v1
+      
+    rules:
+  - id: syntax-error
+    languages:
+      - python
+    message: There is an error in the code!
+    pattern: print(...
+    severity: ERROR
+    
         with:
           config: >- # more at semgrep.dev/explore
             p/security-audit
