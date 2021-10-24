@@ -19,12 +19,6 @@ jobs:
     if: (github.actor != 'dependabot[bot]')
     steps:
       # Fetch project source
-      - name: Python Scan Ruleset
-        run: 
-          python3 -m pip install semgrep
-          semgrep --config "p/python"
-          semgrep --config "p/ci"
-          semgrep --config "p/r2c-ci"
           
       - uses: actions/checkout@v2
 
@@ -37,6 +31,13 @@ jobs:
             #semgrep --config "p/python"
             #semgrep --config "p/ci"
             #semgrep --config "p/r2c-ci"
+            
+      #- name: Python Scan Ruleset
+        #run: 
+          #python3 -m pip install semgrep
+          #semgrep --config "p/python"
+          #semgrep --config "p/ci"
+          #semgrep --config "p/r2c-ci"
             
  
           
