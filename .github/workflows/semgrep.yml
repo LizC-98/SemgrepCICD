@@ -31,9 +31,9 @@ jobs:
           config: >- # more at semgrep.dev/explore
             p/security-audit
             p/secrets
-            #semgrep --config "p/python"
-            #semgrep --config "p/ci"
-            #semgrep --config "p/r2c-ci"
+            semgrep --config "p/python"
+            semgrep --config "p/ci"
+            semgrep --config "p/r2c-ci"
             
       #- name: Python Scan Ruleset
         #run: 
