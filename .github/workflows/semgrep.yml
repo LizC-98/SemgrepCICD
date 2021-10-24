@@ -29,6 +29,7 @@ jobs:
             p/secrets
             run: semgrep --config "p/python"
             run: semgrep --config "p/ci"
+            run: semgrep --config "p/r2c-ci"
       #name: Python Scan Ruleset
       #run: semgrep --config "p/python"
     
