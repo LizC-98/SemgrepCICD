@@ -27,6 +27,10 @@ jobs:
           config: >- # more at semgrep.dev/explore
             p/security-audit
             p/secrets
+            run: semgrep --config "p/python"
+      #name: Python Scan Ruleset
+      #run: semgrep --config "p/python"
+    
             
 
 
