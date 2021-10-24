@@ -4,4 +4,9 @@ def hello():
 def bye():
  print("bye")
   
-        print(hello
+print(hello
+     
+      
+name1 = input("What is your name?: ")
+     
+print("My name is", name2)
