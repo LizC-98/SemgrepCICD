@@ -27,7 +27,8 @@ jobs:
 
       - name: semgrep-action
       - uses: returntocorp/semgrep-action@v1
-      - with:
+      - run: 
+        - with:
           - rules:
           - id: print
           - languages: 
