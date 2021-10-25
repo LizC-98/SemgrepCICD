@@ -22,18 +22,25 @@ jobs:
     if: (github.actor != 'dependabot[bot]')
     steps:
       # Fetch project source
-          
+      - name: Checkout
       - uses: actions/checkout@v2
 
+      - name: semgrep-action
       - uses: returntocorp/semgrep-action@v1
-    
-        with:
-          config: >- # more at semgrep.dev/explore
-            p/security-audit
-            p/secrets
-            semgrep --config "p/python"
-            semgrep --config "p/ci"
-            semgrep --config "p/r2c-ci"
+      - with:
+          - rules:
+          - id: print
+          - languages: 
+            - python
+          - message: Found Print Statement
+          - pattern: print(...
+          - severity: ERROR
+#           config: >- # more at semgrep.dev/explore
+#             p/security-audit
+#             p/secrets
+#             semgrep --config "p/python"
+#             semgrep --config "p/ci"
+#             semgrep --config "p/r2c-ci"
             
       #- name: Python Scan Ruleset
         #run: 
